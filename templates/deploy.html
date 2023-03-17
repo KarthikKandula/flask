@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Deploy</title>
+{% endblock %}
+
+{% block body %}
+    {%if repo and branch %}
+        <p>Pulling branch <b>{{ branch }}</b> from repo <b>{{ repo }}</b></p>
+    {% elif repo and not branch %}
+        <p>Please enter a branch to pull from repo <b>{{ repo }}</b></p>
+    {% else %}
+        <h2>Welcome!!</h2>
+        <p>You can deploy a project from here.</p>
+        <p>Please provide a repo & branch to pull in the url in the format /deploy/<b>repo/branch</b></p>
+    {% endif %}
+{% endblock %}

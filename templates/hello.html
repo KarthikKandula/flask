@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Hello!</title>
+{% endblock %}
+
+{% block body %}
+
+{%if fname and lname %}
+<strong>Hello {{ fname }} {{ lname }}!</strong>
+{% elif fname and not lname %}
+<strong>Hello {{ fname }}!!</strong>
+{% else %}
+<h2>Hello!</h2>
+<p>Please give a name in the format /hello/<b>FirstName/LastName</b></p>
+{% endif %}
+{% endblock %}

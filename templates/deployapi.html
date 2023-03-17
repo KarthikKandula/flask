@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Form!</title>
+{% endblock %}
+
+{% block body %}
+<h1>Welcome!!</h1>
+<h2>Submit this form to get more data</h2>
+
+<form method="POST" action="{{ url_for('api') }}">
+    <label for="repo">Repository:</label>
+    <input type="text" name="repo"><br>
+    <label for="branch">Branch:</label>
+    <input type="text" name="branch"><br>
+    <label for="typerepo">Type of Repository:</label>
+    <select name="typerepo" id="typerepo">
+        <option value="py-flask">Python Flask</option>
+        <option value="py-django">Python Django</option>
+        <option value="nodejs">Node.js</option>
+        <option value="generic">Other/Generic</option>
+    </select><br>
+    <input type="submit" value="Submit">
+</form>
+
+<pre>{{ shelloutput }}</pre>
+
+{% endblock %}
